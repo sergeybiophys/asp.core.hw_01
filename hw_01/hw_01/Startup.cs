@@ -82,7 +82,11 @@ namespace hw_01
 
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("ASP.NET.Core HW - 01!");
+                    await context.Response.WriteAsync($"<p>ASP.NET.Core HW - 01!</p>" + 
+                                                      $"<p>endpoints:</p>" + 
+                                                      $"<p>/home</p>" + 
+                                                      $"<p>/about</p>" + 
+                                                      $"<p>/contacts</p>");
                 });
             });
         }
