@@ -28,6 +28,37 @@ namespace hw_01
 
             app.UseRouting();
 
+            app.Map("/home", (home) =>
+             {
+                 home.Run(async (ctx) =>
+                 {
+                     await ctx.Response.WriteAsync($"<h1>Home page</h1>" +
+                         $"<h3>The page was visited time</h3>");
+                 });
+ 
+             });
+
+
+            app.Map("/about", (home) =>
+            {
+                home.Run(async (ctx) =>
+                {
+                    await ctx.Response.WriteAsync($"<h1>About page</h1>" +
+                        $"<h3>The page was visited time</h3>");
+                });
+
+            });
+
+            app.Map("/contacts", (home) =>
+            {
+                home.Run(async (ctx) =>
+                {
+                    await ctx.Response.WriteAsync($"<h1>Contacts page</h1>" +
+                        $"<h3>The page was visited time</h3>");
+                });
+
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
